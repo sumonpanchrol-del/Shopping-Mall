@@ -1,0 +1,567 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Shopping App
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+ </head>
+ <body class="bg-gray-50 min-h-screen flex flex-col">
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+   <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+     <img alt="Shopping bag icon with a cart and a tag, representing the logo of the shopping app" class="w-10 h-10" height="40" src="https://storage.googleapis.com/a1aa/image/45af12f4-00a9-4a83-0918-99f7da96bf0d.jpg" width="40"/>
+     <h1 class="text-2xl font-semibold text-gray-800">
+      ShopEasy
+     </h1>
+    </div>
+    <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
+     <a class="hover:text-indigo-600 transition" href="#home">
+      Home
+     </a>
+     <a class="hover:text-indigo-600 transition" href="#products">
+      Products
+     </a>
+     <a class="hover:text-indigo-600 transition" href="#about">
+      About
+     </a>
+     <a class="hover:text-indigo-600 transition" href="#contact">
+      Contact
+     </a>
+    </nav>
+    <div class="flex items-center space-x-4">
+     <button aria-label="View shopping cart" class="relative text-gray-700 hover:text-indigo-600 transition focus:outline-none" id="cart-button">
+      <i class="fas fa-shopping-cart fa-lg">
+      </i>
+      <span class="absolute -top-2 -right-2 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center font-semibold" id="cart-count">
+       0
+      </span>
+     </button>
+     <button aria-label="Open menu" class="md:hidden text-gray-700 hover:text-indigo-600 transition focus:outline-none" id="menu-button">
+      <i class="fas fa-bars fa-lg">
+      </i>
+     </button>
+    </div>
+   </div>
+   <nav aria-label="Mobile navigation" class="md:hidden bg-white border-t border-gray-200 hidden" id="mobile-menu">
+    <div class="px-4 py-3 space-y-2">
+     <a class="block text-gray-700 font-medium hover:text-indigo-600 transition" href="#home">
+      Home
+     </a>
+     <a class="block text-gray-700 font-medium hover:text-indigo-600 transition" href="#products">
+      Products
+     </a>
+     <a class="block text-gray-700 font-medium hover:text-indigo-600 transition" href="#about">
+      About
+     </a>
+     <a class="block text-gray-700 font-medium hover:text-indigo-600 transition" href="#contact">
+      Contact
+     </a>
+    </div>
+   </nav>
+  </header>
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+   <!-- Hero Section -->
+   <section class="flex flex-col md:flex-row items-center bg-white rounded-lg shadow-md overflow-hidden mb-12" id="home">
+    <div class="md:w-1/2 p-6">
+     <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+      Shop Anything, Anytime
+     </h2>
+     <p class="text-gray-700 mb-6">
+      Discover thousands of products from all categories at unbeatable
+          prices. Fast delivery and easy returns.
+     </p>
+     <a class="inline-block bg-indigo-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-indigo-700 transition" href="#products">
+      Start Shopping
+     </a>
+    </div>
+    <div class="md:w-1/2">
+     <img alt="A vibrant shopping scene showing diverse products like electronics, clothes, and groceries with happy customers shopping" class="w-full h-auto object-cover" height="400" src="https://storage.googleapis.com/a1aa/image/203d9fd8-c8c0-4b47-1242-c9bb661569b8.jpg" width="600"/>
+    </div>
+   </section>
+   <!-- Products Section -->
+   <section class="mb-12" id="products">
+    <h3 class="text-3xl font-bold text-gray-900 mb-8 text-center">
+     Featured Products
+    </h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8" id="product-list">
+     <!-- Product 1 -->
+     <div class="bg-white rounded-lg shadow-md flex flex-col overflow-hidden hover:shadow-lg transition">
+      <img alt=" Headphones with modern design and blue accents on a white background" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/7cf6cf83-f19f-407d-f73a-619f6b27ba11.jpg" width="400"/>
+      <div class="p-4 flex flex-col flex-grow">
+       <h4 class="text-lg font-semibold text-gray-900 mb-2">
+         Headphones
+       </h4>
+       <p class="text-gray-700 flex-grow">
+        High-quality headphones with noise cancellation and
+            long battery life.
+       </p>
+       <div class="mt-4 flex items-center justify-between">
+        <span class="text-indigo-600 font-bold text-xl">
+         $199.99
+        </span>
+        <button class="bg-indigo-600 text-white px-3 py-1 rounded-md hover:bg-indigo-700 transition add-to-cart" data-id="1" data-image="https://placehold.co/400x300/png?text=Headphones+with+modern+design+and+blue+accents" data-name="Wireless Headphones" data-price="99.99">
+         Add to Cart
+        </button>
+       </div>
+      </div>
+     </div>
+     <!-- Product 2 -->
+     <div class="bg-white rounded-lg shadow-md flex flex-col overflow-hidden hover:shadow-lg transition">
+      <img alt="Smartphone with large display and sleek black design on a white background" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/cadefe49-319a-4f97-8f78-c4a24cc3fd87.jpg" width="400"/>
+      <div class="p-4 flex flex-col flex-grow">
+       <h4 class="text-lg font-semibold text-gray-900 mb-2">
+        Smartphone
+       </h4>
+       <p class="text-gray-700 flex-grow">
+        Latest model smartphone with high-resolution camera and fast
+            processor.And better for gaming.
+       </p>
+       <div class="mt-4 flex items-center justify-between">
+        <span class="text-indigo-600 font-bold text-xl">
+         $1999.99
+        </span>
+        <button class="bg-indigo-600 text-white px-3 py-1 rounded-md hover:bg-indigo-700 transition add-to-cart" data-id="2" data-image="https://placehold.co/400x300/png?text=Smartphone+with+large+display+and+sleek+black+design" data-name="Smartphone" data-price="699.00">
+         Add to Cart
+        </button>
+       </div>
+      </div>
+     </div>
+     <!-- Product 3 -->
+     <div class="bg-white rounded-lg shadow-md flex flex-col overflow-hidden hover:shadow-lg transition">
+      <img alt="Comfortable running shoes in red and white color on a white background" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/ce137983-9081-4b79-658f-1fbeadcafe0a.jpg" width="400"/>
+      <div class="p-4 flex flex-col flex-grow">
+       <h4 class="text-lg font-semibold text-gray-900 mb-2">
+         Shoes
+       </h4>
+       <p class="text-gray-700 flex-grow">
+        Lightweight and breathable shoes designed for maximum
+            comfort.It makes you comfortable.
+       </p>
+       <div class="mt-4 flex items-center justify-between">
+        <span class="text-indigo-600 font-bold text-xl">
+         $499.99
+        </span>
+        <button class="bg-indigo-600 text-white px-3 py-1 rounded-md hover:bg-indigo-700 transition add-to-cart" data-id="3" data-image="https://placehold.co/400x300/png?text=Comfortable+Shoes+in+red+and+white+color" data-name="Running Shoes" data-price="120.00">
+         Add to Cart
+        </button>
+       </div>
+      </div>
+     </div>
+     <!-- Product 4 -->
+     <div class="bg-white rounded-lg shadow-md flex flex-col overflow-hidden hover:shadow-lg transition">
+      <img alt="Modern coffee maker with stainless steel finish on a white background" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/7cbfe20c-e442-4107-d358-e0e833dfdcc8.jpg" width="400"/>
+      <div class="p-4 flex flex-col flex-grow">
+       <h4 class="text-lg font-semibold text-gray-900 mb-2">
+        Coffee Maker
+       </h4>
+       <p class="text-gray-700 flex-grow">
+        Brew the perfect cup every time with this easy-to-use coffee
+              maker.
+       </p>
+       <div class="mt-4 flex items-center justify-between">
+        <span class="text-indigo-600 font-bold text-xl">
+         $99.99
+        </span>
+        <button class="bg-indigo-600 text-white px-3 py-1 rounded-md hover:bg-indigo-700 transition add-to-cart" data-id="4" data-image="https://placehold.co/400x300/png?text=Modern+Coffee+Maker+with+stainless+steel+finish" data-name="Coffee Maker" data-price="89.99">
+         Add to Cart
+        </button>
+       </div>
+      </div>
+     </div>
+     <!-- Product 5 -->
+     <div class="bg-white rounded-lg shadow-md flex flex-col overflow-hidden hover:shadow-lg transition">
+      <img alt="Elegant wristwatch with black leather strap and gold details on a white background" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/e075ff37-d451-45bb-61e9-4f2ee1d751a8.jpg" width="400"/>
+      <div class="p-4 flex flex-col flex-grow">
+       <h4 class="text-lg font-semibold text-gray-900 mb-2">
+        watches
+       </h4>
+       <p class="text-gray-700 flex-grow">
+        Classic watches with precise quartz movement and stylish
+            design.
+       </p>
+       <div class="mt-4 flex items-center justify-between">
+        <span class="text-indigo-600 font-bold text-xl">
+         $149.99
+        </span>
+        <button class="bg-indigo-600 text-white px-3 py-1 rounded-md hover:bg-indigo-700 transition add-to-cart" data-id="5" data-image="https://placehold.co/400x300/png?text=Elegant+Wristwatch+with+black+leather+strap+and+gold+details" data-name="Wristwatch" data-price="150.00">
+         Add to Cart
+        </button>
+       </div>
+      </div>
+     </div>
+     <!-- Product 6 -->
+     <div class="bg-white rounded-lg shadow-md flex flex-col overflow-hidden hover:shadow-lg transition">
+      <img alt="Smart LED TV with ultra HD display and slim frame on a white background" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/8884371a-16e7-41a7-bb6e-decf2bf92070.jpg" width="400"/>
+      <div class="p-4 flex flex-col flex-grow">
+       <h4 class="text-lg font-semibold text-gray-900 mb-2">
+        Smart TV
+       </h4>
+       <p class="text-gray-700 flex-grow">
+        55-inch Smart LED TV with ultra HD display and built-in streaming
+              apps.
+       </p>
+       <div class="mt-4 flex items-center justify-between">
+        <span class="text-indigo-600 font-bold text-xl">
+         $999.99
+        </span>
+        <button class="bg-indigo-600 text-white px-3 py-1 rounded-md hover:bg-indigo-700 transition add-to-cart" data-id="6" data-image="https://placehold.co/400x300/png?text=Smart+LED+TV+with+ultra+HD+display+and+slim+frame" data-name="Smart TV" data-price="799.00">
+         Add to Cart
+        </button>
+       </div>
+      </div>
+     </div>
+     <!-- Product 7 -->
+     <div class="bg-white rounded-lg shadow-md flex flex-col overflow-hidden hover:shadow-lg transition">
+      <img alt="Kitchen blender with multiple speed settings and glass jar on a white background" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/20659e4c-8776-4605-5f9d-7c293f96d1c6.jpg" width="400"/>
+      <div class="p-4 flex flex-col flex-grow">
+       <h4 class="text-lg font-semibold text-gray-900 mb-2">
+        Kitchen Blender
+       </h4>
+       <p class="text-gray-700 flex-grow">
+        Powerful kitchen blender with multiple speed settings and easy
+            cleaning.
+       </p>
+       <div class="mt-4 flex items-center justify-between">
+        <span class="text-indigo-600 font-bold text-xl">
+         $249.99
+        </span>
+        <button class="bg-indigo-600 text-white px-3 py-1 rounded-md hover:bg-indigo-700 transition add-to-cart" data-id="7" data-image="https://placehold.co/400x300/png?text=Kitchen+Blender+with+multiple+speed+settings+and+glass+jar" data-name="Blender" data-price="59.99">
+         Add to Cart
+        </button>
+       </div>
+      </div>
+     </div>
+     <!-- Product 8 -->
+     <div class="bg-white rounded-lg shadow-md flex flex-col overflow-hidden hover:shadow-lg transition">
+      <img alt="Cozy winter jacket in dark green color with hood on a white background" class="w-full h-48 object-cover" height="300" src="https://storage.googleapis.com/a1aa/image/11171e5d-0a69-448a-2a2e-f4f105bc4a38.jpg" width="400"/>
+      <div class="p-4 flex flex-col flex-grow">
+       <h4 class="text-lg font-semibold text-gray-900 mb-2">
+        Winter Jacket
+       </h4>
+       <p class="text-gray-700 flex-grow">
+        Warm and stylish winter jacket with insulated lining and hood.
+       </p>
+       <div class="mt-4 flex items-center justify-between">
+        <span class="text-indigo-600 font-bold text-xl">
+         $190.00
+        </span>
+        <button class="bg-indigo-600 text-white px-3 py-1 rounded-md hover:bg-indigo-700 transition add-to-cart" data-id="8" data-image="https://placehold.co/400x300/png?text=Cozy+Winter+Jacket+in+dark+green+color+with+hood" data-name="Winter Jacket" data-price="180.00">
+         Add to Cart
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <!-- About Section -->
+   <section class="bg-white rounded-lg shadow-md p-8 mb-12 max-w-4xl mx-auto" id="about">
+    <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">
+     About Us
+    </h3>
+    <p class="text-gray-700 leading-relaxed text-center max-w-3xl mx-auto">
+     ShopEasy is your one-step online shop for everything you need. We
+        provide a wide range of products from electronics to fashion, home
+        appliances, and more. Our mission is to make shopping easy, fast, and
+        enjoyable for everyone. With secure payment options and reliable
+        delivery, you can shop with confidence.
+    </p>
+   </section>
+   <!-- Contact Section -->
+   <section class="bg-white rounded-lg shadow-md p-8 max-w-4xl mx-auto" id="contact">
+    <h3 class="text-3xl font-bold text-gray-900 mb-6 text-center">
+     Contact Us
+    </h3>
+    <form autocomplete="off" class="max-w-xl mx-auto space-y-6" id="contact-form" novalidate="">
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="name">
+       Name
+      </label>
+      <input class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="name" name="name" placeholder="Your full name" required="" type="text"/>
+     </div>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="email">
+       Email
+      </label>
+      <input class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="email" name="email" placeholder="you@example.com" required="" type="email"/>
+     </div>
+     <div>
+      <label class="block text-gray-700 font-semibold mb-2" for="message">
+       Message
+      </label>
+      <textarea class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500" id="message" name="message" placeholder="Your message" required="" rows="4"></textarea>
+     </div>
+     <button class="bg-indigo-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-indigo-700 transition w-full" type="submit">
+      Send Message
+     </button>
+    </form>
+   </section>
+  </main>
+  <!-- Cart Modal -->
+  <div aria-labelledby="cart-modal-title" aria-modal="true" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden" id="cart-modal" role="dialog">
+   <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full mx-4 max-h-[90vh] overflow-y-auto flex flex-col">
+    <header class="flex justify-between items-center p-4 border-b border-gray-200">
+     <h2 class="text-xl font-bold text-gray-900" id="cart-modal-title">
+      Shopping Cart
+     </h2>
+     <button aria-label="Close cart" class="text-gray-700 hover:text-indigo-600 focus:outline-none" id="close-cart">
+      <i class="fas fa-times fa-lg">
+      </i>
+     </button>
+    </header>
+    <div class="p-4 flex-grow overflow-y-auto" id="cart-items">
+     <p class="text-gray-700 text-center">
+      Your cart is empty.
+     </p>
+    </div>
+    <footer class="p-4 border-t border-gray-200">
+     <div class="flex justify-between items-center mb-4">
+      <span class="text-lg font-semibold text-gray-900">
+       Total:
+      </span>
+      <span class="text-lg font-bold text-indigo-600" id="cart-total">
+       $0.00
+      </span>
+     </div>
+     <button class="w-full bg-indigo-600 text-white py-3 rounded-md font-semibold hover:bg-indigo-700 transition disabled:opacity-50" disabled="" id="checkout-button">
+      Checkout
+     </button>
+    </footer>
+   </div>
+  </div>
+  <script>
+   // Mobile menu toggle
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Cart modal toggle
+    const cartButton = document.getElementById('cart-button');
+    const cartModal = document.getElementById('cart-modal');
+    const closeCartButton = document.getElementById('close-cart');
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartCount = document.getElementById('cart-count');
+    const cartTotal = document.getElementById('cart-total');
+    const checkoutButton = document.getElementById('checkout-button');
+
+    let cart = {};
+
+    function updateCartCount() {
+      const count = Object.values(cart).reduce((acc, item) => acc + item.quantity, 0);
+      cartCount.textContent = count;
+      if (count === 0) {
+        cartCount.classList.add('hidden');
+      } else {
+        cartCount.classList.remove('hidden');
+      }
+    }
+
+    function formatPrice(price) {
+      return '$' + price.toFixed(2);
+    }
+
+    function renderCart() {
+      cartItemsContainer.innerHTML = '';
+      const items = Object.values(cart);
+      if (items.length === 0) {
+        cartItemsContainer.innerHTML = '<p class="text-gray-700 text-center">Your cart is empty.</p>';
+        cartTotal.textContent = formatPrice(0);
+        checkoutButton.disabled = true;
+        return;
+      }
+      checkoutButton.disabled = false;
+
+      items.forEach((item) => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className =
+          'flex items-center space-x-4 border-b border-gray-200 py-4 last:border-b-0';
+
+        const img = document.createElement('img');
+        img.src = item.image;
+        img.alt = `Image of ${item.name}`;
+        img.className = 'w-20 h-20 object-cover rounded-md flex-shrink-0';
+
+        const infoDiv = document.createElement('div');
+        infoDiv.className = 'flex-grow';
+
+        const nameP = document.createElement('p');
+        nameP.className = 'font-semibold text-gray-900';
+        nameP.textContent = item.name;
+
+        const priceP = document.createElement('p');
+        priceP.className = 'text-indigo-600 font-bold';
+        priceP.textContent = formatPrice(item.price);
+
+        const quantityDiv = document.createElement('div');
+        quantityDiv.className = 'flex items-center space-x-2 mt-1';
+
+        const minusBtn = document.createElement('button');
+        minusBtn.className =
+          'text-gray-600 hover:text-indigo-600 focus:outline-none px-2 py-1 border border-gray-300 rounded';
+        minusBtn.setAttribute('aria-label', `Decrease quantity of ${item.name}`);
+        minusBtn.innerHTML = '<i class="fas fa-minus"></i>';
+        minusBtn.addEventListener('click', () => {
+          if (item.quantity > 1) {
+            item.quantity--;
+          } else {
+            delete cart[item.id];
+          }
+          updateCartCount();
+          renderCart();
+          saveCart();
+        });
+
+        const qtySpan = document.createElement('span');
+        qtySpan.className = 'text-gray-900 font-semibold';
+        qtySpan.textContent = item.quantity;
+
+        const plusBtn = document.createElement('button');
+        plusBtn.className =
+          'text-gray-600 hover:text-indigo-600 focus:outline-none px-2 py-1 border border-gray-300 rounded';
+        plusBtn.setAttribute('aria-label', `Increase quantity of ${item.name}`);
+        plusBtn.innerHTML = '<i class="fas fa-plus"></i>';
+        plusBtn.addEventListener('click', () => {
+          item.quantity++;
+          updateCartCount();
+          renderCart();
+          saveCart();
+        });
+
+        quantityDiv.appendChild(minusBtn);
+        quantityDiv.appendChild(qtySpan);
+        quantityDiv.appendChild(plusBtn);
+
+        infoDiv.appendChild(nameP);
+        infoDiv.appendChild(priceP);
+        infoDiv.appendChild(quantityDiv);
+
+        const removeBtn = document.createElement('button');
+        removeBtn.className =
+          'text-red-600 hover:text-red-800 focus:outline-none ml-4';
+        removeBtn.setAttribute('aria-label', `Remove ${item.name} from cart`);
+        removeBtn.innerHTML = '<i class="fas fa-trash-alt"></i>';
+        removeBtn.addEventListener('click', () => {
+          delete cart[item.id];
+          updateCartCount();
+          renderCart();
+          saveCart();
+        });
+
+        itemDiv.appendChild(img);
+        itemDiv.appendChild(infoDiv);
+        itemDiv.appendChild(removeBtn);
+
+        cartItemsContainer.appendChild(itemDiv);
+      });
+
+      const totalPrice = items.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      );
+      cartTotal.textContent = formatPrice(totalPrice);
+    }
+
+    function saveCart() {
+      localStorage.setItem('shopEasyCart', JSON.stringify(cart));
+    }
+
+    function loadCart() {
+      const savedCart = localStorage.getItem('shopEasyCart');
+      if (savedCart) {
+        cart = JSON.parse(savedCart);
+      }
+    }
+
+    cartButton.addEventListener('click', () => {
+      renderCart();
+      cartModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeCartButton.addEventListener('click', () => {
+      cartModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+
+    cartModal.addEventListener('click', (e) => {
+      if (e.target === cartModal) {
+        cartModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Add to cart buttons
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.getAttribute('data-id');
+        const name = btn.getAttribute('data-name');
+        const price = parseFloat(btn.getAttribute('data-price'));
+        const image = btn.getAttribute('data-image');
+
+        if (cart[id]) {
+          cart[id].quantity++;
+        } else {
+          cart[id] = { id, name, price, image, quantity: 1 };
+        }
+        updateCartCount();
+        saveCart();
+      });
+    });
+
+    // Checkout button
+    checkoutButton.addEventListener('click', () => {
+      alert('Thank you for your purchase! This is a demo checkout.');
+      cart = {};
+      updateCartCount();
+      renderCart();
+      saveCart();
+      cartModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    });
+
+    // Initialize cart on page load
+    loadCart();
+    updateCartCount();
+
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = contactForm.name.value.trim();
+      const email = contactForm.email.value.trim();
+      const message = contactForm.message.value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      // Simple email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      alert(
+        `Thank you, ${name}! Your message has been received. We will contact you at ${email}.`
+      );
+      contactForm.reset();
+    });
+  </script>
+ </body>
+</html>
